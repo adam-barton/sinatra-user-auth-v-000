@@ -30,7 +30,6 @@ class ApplicationController < Sinatra::Base
 
   post '/sessions' do
     @user = User.find_by(email: params[:email], password: params[:password])
-    raise error
   rescue
     redirect :'/sessions/login'
   end
